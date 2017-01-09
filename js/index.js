@@ -1,3 +1,11 @@
+function Store(nameSpace,data){
+	if(data){
+		localStorage.setItem(nameSpace,JSON.stringify(data));
+		return;
+	}
+	return JSON.parse(localStorage.getItem(nameSpace));
+}
+
 /*if(location.hash) {
 	var hash = location.hash; //hash = #rlist
 	$(hash).show();
@@ -10,10 +18,10 @@ window.onhashchange = function(){
 }*/
 
 var hashMap = {
-	'address':searchObj,
-	'citylist':citylistObj,
-	'rlist':rlistObj,
-	'detail':detailObj
+	'address': searchObj,
+	'citylist': citylistObj,
+	'rlist': rlistObj,
+	'detail': detailObj
 };
 
 var cacheMap = {};
@@ -22,7 +30,7 @@ var prevModule = null;
 var curModule = null;
 
 function routeController(hash){
-	var khash = '';
+	var khash = hash;
 	var module = hashMap[hash] || hashMap['address'];
 
 	if(hash.indexOf('address') != -1){

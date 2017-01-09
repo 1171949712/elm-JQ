@@ -41,7 +41,7 @@ html,body {
 }
 
 
-/*³ÇÊÐÁÐ±íÒ³*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½Ò³*/
 #citylist .header {
 	height:1.877333rem;
 	line-height: 1.877333rem;
@@ -152,9 +152,10 @@ html,body {
 }
 
 
-/*²ÍÌüÁÐ±íÒ³*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½Ò³*/
 #rlist{
 	background-color: #f4f4f4;
+	height: auto;
 }
 
 #rlist .header {
@@ -182,6 +183,7 @@ html,body {
 	white-space: nowrap;
 	overflow: hidden;
 }
+
 .swiper-container{
 	padding-bottom: 1.493333rem;
 	background: #fff;
@@ -265,6 +267,7 @@ html,body {
     height: 0.64rem;
     margin-right:0.170667rem
 }
+
 .index-title span img{
 	width:100%;
 	height:100%
@@ -280,24 +283,29 @@ html,body {
 	padding: 0.64rem 0.426667rem;
 	border-bottom: 1px solid #eee;
 }
+
 .left-wrap {
 	width: 2.56rem;
 	height: 2.56rem;
 	margin-right: 0.426667rem;
 }
+
 .left-wrap img {
 	width: 100%;
 	height: 100%;
 }
+
 .right-wrap {
 	width: 13.013333rem;
 	height: 2.56rem;
 }
+
 .line {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
+
 .line h3 {
 	overflow: hidden;
 	max-width: 8.0rem;
@@ -308,6 +316,7 @@ html,body {
 	font-size: 0.65rem;
 	line-height: 0.682667rem;
 }
+
 .brand{
 	height: .4rem;
 	padding: 0 .066667rem;
@@ -320,6 +329,7 @@ html,body {
 	line-height: .4rem;
 	border-radius: .053333rem;
 }
+
 .line i {
 	font-style: normal;
 	padding: 0.064rem;
@@ -329,37 +339,45 @@ html,body {
 	border-radius: 0.106667rem;
 	box-sizing: border-box;
 }
+
 .line:nth-child(2) {
 	margin-top: 0.32rem;
 	line-height: 0.618667rem;
 }
+
 .line:nth-child(3) {
 	margin-top: 0.362667rem;
 	line-height: 0.512rem;
 	font-size: .293333rem;
 }
+
 .left {
 	font-size: .293333rem;
 	color: #666;
 }
+
 .rate {
 	margin: 0 .106667rem;
 	color: #ff6000;
 }
+
 .left em,.info-d-t em {
 	font-style: normal;
 	margin: 0 .08rem;
 	color: #ddd;
 }
+
 .info-send {
 	font-size: 0.170667rem;
 }
+
 .info-send .fniao {
 	padding: .053333rem;
 	border-radius: 0.106667rem;
 	color: #fff;
 	background-color: #2395ff;
 }
+
 .info-send .zsd {
 	margin-left: 0.213333rem;
 	padding: 0 .053333rem;
@@ -369,9 +387,22 @@ html,body {
 	background-color: #fff;
 	color: #2395ff;
 }
+
 .distance {
 	color: #999;
 }
+
 .time {
 	color: #2395ff;
+}
+
+.shoplist:after {
+	content: 'æ­£åœ¨åŠ è½½æ›´å¤šå•†å®¶...';
+	height: 1.536rem;
+	line-height: 1.536rem;
+	color: #999;
+}
+
+body .overlist:after {
+	content: 'æ— æ›´å¤šå•†å®¶';
 }

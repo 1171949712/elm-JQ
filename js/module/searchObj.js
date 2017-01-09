@@ -1,6 +1,8 @@
 var searchObj = {
 	name:'地址搜索页',
+
 	dom:$('#address'),
+
 	init:function(){
 		this.bindEvent();
 	},
@@ -19,10 +21,9 @@ var searchObj = {
 		var me = this;
 		var elm = $('#elm');
 		var baidu = $('#baidu');
-		$("#keyword").on('input', function(event){
-			// console.log('我进行了改变'); 	
+		$("#keyword").on('input', function(event){ 
+			// console.log('我进行了改变'); 	       
 		})
-
 		//饿了么搜索
 		elm.click(function(event){
 			var word = $('#keyword').val();
@@ -40,7 +41,7 @@ var searchObj = {
 					var str = '';
 					for(var i=0; i<res.length; i++){
 						var address = encodeURI(res[i].address);
-						str += '<li><a href="#rlist-'+ res[i].latitude +'-'+ res[i].longitude +'-'+ address +'">'+ res[i].name +'</a></li>';
+						str += '<li><a data-addr="'+ res[i].address +'" data-geo="'+ res[i].geohash +'" data-lng="'+ res[i].longitude +'" data-lat="'+ res[i].latitude +'" href="#rlist">'+ res[i].name +'</a></li>';
 					}
 					$('#list').html(str);
 				},
@@ -49,8 +50,17 @@ var searchObj = {
 				}
 			});
 		})
-
-
+		// 搜索出来的列表的点击事件
+		$('#list').on('click','a',function(event){
+			event.preventDefault();
+			var locInfo = {
+				lat: this.dataset.lat,
+				lng: this.dataset.lng,
+				addr: this.dataset.addr
+			}
+			Store('ele',locInfo);
+			location.href = '#rlist-' + this.dataset.geo;
+		})
 		//百度外卖的搜索
 		baidu.click(function(event){
 			// console.log('百度外卖搜索');
@@ -87,6 +97,7 @@ var searchObj = {
 	enter:function(){
 		this.dom.show();
 	},
+
 	leave:function(){
 		this.dom.hide();
 	}
