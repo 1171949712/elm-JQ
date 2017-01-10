@@ -33,15 +33,20 @@ function routeController(hash){
 	var khash = hash;
 	var module = hashMap[hash] || hashMap['address'];
 
-	if(hash.indexOf('address') != -1){
+	if(hash.indexOf('address') !== -1){
 		khash = 'address';
 		module = searchObj;
 		module.changeCity(hash);
 	}
-	if(hash.indexOf('rlist') != -1){
+	if(hash.indexOf('rlist') !== -1){
 		khash = 'rlist';
 		module = rlistObj;
 		module.loadReslist(hash);
+	}
+	if(hash.indexOf('detail') !== -1){
+		khash = 'detail';
+		module = detailObj;
+		module.loadResdetail(hash);
 	}
 
 	prevModule = curModule;
@@ -70,11 +75,12 @@ window.onhashchange = function(){
 	routeController(hash);
 }
 
-var swiper = new Swiper('.swiper-container', {
+//轮播图
+/*var swiper = new Swiper('.swiper-container', {
     pagination: '.swiper-pagination',
     slidesPerView: 1,
     paginationClickable: true,
     spaceBetween: 30,
     loop: true
-});
+});*/
 

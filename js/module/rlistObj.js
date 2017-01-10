@@ -5,12 +5,11 @@ rlistObj = $.extend(rlistObj,{
 	offset: 0,
 
 	init: function(){
-		
 	},
 
 	enter: function(){
 		this.dom.show();
-		this.loadMoreList();
+		this.bindEvent();
 	},
 
 	leave: function(){
@@ -29,8 +28,32 @@ rlistObj = $.extend(rlistObj,{
 		}
 	},
 
-	loadMoreList: function(){
-		window.addEventListener('scroll', this.scroll)
+	bindEvent: function(){
+		window.addEventListener('scroll', this.scroll);//监听滚动条
+		//轮播图
+		var bullets = $('#position li');
+		Swipe(document.getElementById('mySwipe'), {
+		    auto: 0,
+		    continuous: true,
+		    disableScroll:false,
+		    callback: function(pos) {
+		      console.log('滑动结束之后所执行回调函数');
+		        var i = bullets.length;
+		        while (i--) {
+		            bullets[i].className = ' ';
+		        }
+		        bullets[pos].className = 'cur';
+		    }
+		});
+
+		//跳转到餐厅详情页
+		$('.shoplist').on('click', '.item-list', function(event){
+			var id = this.dataset.id;
+			var lat = this.dataset.lat;
+			var lng = this.dataset.lng;
+			// console.log(id)
+			location.href = '#detail-' + id + '-' + lat + '-' + lng;
+		})
 	},
 
 	loadInfo: function(locObj, flag){
@@ -59,23 +82,7 @@ rlistObj = $.extend(rlistObj,{
 					$('.shoplist').removeClass('overlist');
 				}
 				for(var i=0; i<res.length; i++){
-					var img_path = res[i].image_path;					
-					/*img_path = img_path.split('');
-					img_path.splice(1,0,'/');
-					img_path.splice(4,0,'/');
-					img_path = img_path.join('');
-					// console.log(img_path)
-					switch (true){
-						case (img_path.indexOf('jpeg') != -1):
-						img_path = img_path.concat('.jpeg');
-						break;
-						case (img_path.indexOf('png') != -1):
-						img_path = img_path.concat('.png');
-						break;
-						case (img_path.indexOf('jpg') != -1):
-						img_path = img_path.concat('.jpg');
-						break;
-					}*/
+					var img_path = res[i].image_path;
 					var a = img_path.slice(0,1);
 					var b = img_path.slice(1,3);
 					var c = img_path.slice(3,32);
@@ -83,7 +90,7 @@ rlistObj = $.extend(rlistObj,{
 					img_path = a + '/' + b + '/' + c + d + '.' + d;
 					// console.log(img_path)
 					str += 
-					'<div class="item-list">' +
+					'<div  data-lng="'+ res[i].longitude +'" data-lat="'+ res[i].latitude +'" data-id="'+ res[i].id +'" class="item-list">' +
 						'<div class="left-wrap"><img src="//fuss10.elemecdn.com/'+ img_path +'" /></div>' +
 						'<div class="right-wrap">' +
 							'<div class="line">' +

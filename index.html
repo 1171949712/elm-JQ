@@ -19,9 +19,6 @@
 		<ul id="list"></ul>
 	</div>
 
-	<!-- 餐厅详情页 -->
-	<div class="section" id="detail"><a href="#address">餐厅详情页</a></div>
-
 	<!-- 城市列表页 -->
 	<div class="section" id="citylist">
 		<div class="header">
@@ -46,9 +43,9 @@
 		<div class="header">
 			<a href="#javascript"><img src="img/search.png" alt=""></a><a href="#citylist" class="detail-addr"></a><a href="#javascript">登录</a>
 		</div>
-		<div class="swiper-container">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
+		<div class="swipe" id="mySwipe">
+			<div class="swipe-wrap">
+				<div class="item">
 					<a href="javascript:">
 						<div class="container"><img src="//fuss10.elemecdn.com/b/7e/d1890cf73ae6f2adb97caa39de7fcjpeg.jpeg"></div>
 						<span class="title">美食</span>
@@ -82,7 +79,7 @@
 						<span class="title">简餐</span>
 					</a>
 				</div>
-				<div class="swiper-slide">
+				<div class="item">
 					<a href="javascript:">
 						<div class="container"><img src="//fuss10.elemecdn.com/e/7e/02b72b5e63c127d5bfae57b8e4ab1jpeg.jpeg"></div>
 						<span class="title">土豪推荐</span>
@@ -117,17 +114,65 @@
 					</a>
 				</div>
 			</div>
-			<div class="swiper-pagination"></div>
+			<ul id="position" class="hidden">
+			    <li class="cur"></li>
+			    <li style="margin-left:-5px"></li>
+			</ul>
 		</div>
 		<h3 class="index-title"><span><img src="img/store.png" alt=""></span>附近商家</h3>
 		<div class="shoplist">
 			
 		</div>
+	</div>
+
+	<!-- 餐厅详情页 -->
+	<div class="section" id="detail">
+		<div class="shop-header">
+			<!-- <div class="header-main">
+				<div class="img-wrap"><img src="https://fuss10.elemecdn.com/7/d3/48a777a6b444dc317cc24d101220cjpeg.jpeg?imageMogr/quality/80/format/webp/" alt=""></div>
+				<div class="shop-info">
+					<h1>肯德基宅急送（邯郸店）</h1>
+					<p>商家配送<span class="split">/</span>39分钟送达<span class="split">/</span>配送费¥9</p>
+					<p><i>减</i>满60减15，满100减40(不与美食活动同享)（限在线支付）</p>
+				</div>
+			</div>
+			<div class="header-tip">
+				<span class="tolded">公告</span><p>本餐厅不使用饿了么配送，由肯德基宅急送官方品牌配送，会员用户无法享受免配送费服务</p>
+				<span class="icon-right">></span>
+			</div> -->
+		</div>
+		<div class="shopnav">
+			<p><span class="span-active">商品</span></p>
+			<p><span>商家</span></p>
+		</div>
+		<div class="shop-content">
+			<div class="cont-left">
+				<ul class="leftnav">
+					<!-- <li>热销榜</li>
+					<li>热销榜</li>
+					<li>热销榜</li>
+					<li>热销榜</li>
+					<li>热销榜</li>
+					<li>热销榜</li>
+					<li>热销榜</li>
+					<li>热销榜</li>
+					<li>热销榜</li> -->
+				</ul>
+			</div>
+			<div class="right-wrap">
+				<div class="cont-right">
+					
+				</div>
+			</div>
+		</div>
 	</div>   
 	
 	<!-- JS引入 -->
 	<script src="js/zepto.js"></script>
-	<script src="js/swiper.jquery.js"></script>
+	<script src="js/fastclick.js"></script>
+	<script src="js/swipe.js"></script>
+	<script src="js/iscroll.js"></script>
+	<script src="js/pace.js"></script>
 	<script src="js/module/searchObj.js"></script>
 	<script src="js/module/detailObj.js"></script>
 	<script src="js/module/citylistObj.js"></script>	

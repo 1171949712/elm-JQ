@@ -51,7 +51,7 @@ var searchObj = {
 			});
 		})
 		// 搜索出来的列表的点击事件
-		$('#list').on('click','a',function(event){
+		$('#list').on('click', 'a', function(event){
 			event.preventDefault();
 			var locInfo = {
 				lat: this.dataset.lat,
