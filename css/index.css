@@ -322,7 +322,7 @@ html,body {
 	height: 100%;
 }
 
-.right-wrap {
+#rlist .right-wrap {
 	width: 13.013333rem;
 	height: 2.56rem;
 }
@@ -469,6 +469,13 @@ body .overlist:after {
 	box-sizing: border-box;
 	border-radius: 50%;
 }
+#detail .car .active_car {
+	background: #3190e8 url(../img/car1.png) no-repeat center;
+}
+#detail .icon-car .left-num {
+	right: -0.170667rem;
+	top: -0.170667rem;
+}
 #detail .money-info {
 	flex: 1; 
 	text-align: left;
@@ -486,6 +493,9 @@ body .overlist:after {
 	font-weight: 600;
 	background-color: #535356;
 	line-height: 2.133333rem;
+}
+#detail .active_pay {
+	background-color: #4cd964;
 }
 #detail .shop-header {
 	background-image: url("https://fuss10.elemecdn.com/7/d3/48a777a6b444dc317cc24d101220cjpeg.jpeg?imageMogr/quality/80/format/webp/thumbnail/!40p/blur/50x40/");
@@ -593,7 +603,7 @@ body .overlist:after {
 #detail .shopnav {
 	height: 1.941333rem;
 	line-height: 1.941333rem;
-	font-size: 0.32rem;
+	font-size: 0.512rem;
 	color: #666;
 	text-align: center;
 	box-sizing: border-box;
@@ -614,26 +624,25 @@ body .overlist:after {
 	flex: 1;
 }
 #detail .cont-left {
-	height: auto;
 	width: 3.626667rem;
 	background: #f8f8f8;
 	position: relative;
 	overflow: hidden;
 }
-#detail .leftnav:after,.cont-right:after {
+#detail .leftnav:after,.right-wrap:after {
 	content: '';
 	height: 2.133333rem;
 	display: block;
 	overflow: hidden;
 	clear: both;
 }
-#detail .right-wrap {	
+#detail .cont-right {	
 	flex: 1;
-	height: auto;
 	position: relative;
 	overflow: hidden;
 }
 #detail .cont-left li {
+	position: relative;
 	padding: .8rem .4rem;
     border-bottom: 1px solid #ededed;
     font-size: 0.597333rem;
@@ -641,6 +650,23 @@ body .overlist:after {
     text-align: left;
     box-sizing: border-box;
     border-left: 2px solid #ededed;
+}
+#detail .left-num {
+	position: absolute;
+	right: 0.106667rem;
+	top: 0.106667rem;
+	display: block;
+	width: 0.512rem;
+	height: 0.512rem;
+	padding: 0.106667rem;
+	line-height: 0.512rem;
+	border: 1px solid #ff461d;
+	border-radius: 50%;
+	background: #ff461d;
+	color: #fff;
+	display: none;
+	font-size: 0.213333rem;
+	text-align: center;
 }
 #detail li.cont-left-active {
 	background: #fff;
@@ -652,6 +678,10 @@ body .overlist:after {
 	border-bottom: 1px solid #ddd;
 }
 #detail .singleItem h2 {
+	width: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 	height: 1.344rem;
 	line-height: 1.344rem;
 	text-align: left;

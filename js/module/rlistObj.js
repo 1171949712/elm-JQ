@@ -19,7 +19,7 @@ rlistObj = $.extend(rlistObj,{
 
 	scroll: function(event){
 		// console.log(me.dom.height())
-		console.log('滚动了'); 
+		// console.log('滚动了'); 
 		var me = rlistObj;
 		if(window.scrollY + window.innerHeight === me.dom.height()){
 			console.log('该加载数据了') 

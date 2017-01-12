@@ -1,3 +1,4 @@
+// localStorage方法封装
 function Store(nameSpace,data){
 	if(data){
 		localStorage.setItem(nameSpace,JSON.stringify(data));
@@ -5,7 +6,14 @@ function Store(nameSpace,data){
 	}
 	return JSON.parse(localStorage.getItem(nameSpace));
 }
-
+// 判断一个对象是否为空对象方法封装
+/*function isEmptyObject(e) {  
+    var t;  
+    for (t in e)  
+        return !1;  
+    return !0  
+} 
+*/
 /*if(location.hash) {
 	var hash = location.hash; //hash = #rlist
 	$(hash).show();
@@ -44,8 +52,8 @@ function routeController(hash){
 		module.loadReslist(hash);
 	}
 	if(hash.indexOf('detail') !== -1){
-		khash = 'detail';
 		module = detailObj;
+		khash = 'detail';	
 		module.loadResdetail(hash);
 	}
 
@@ -72,6 +80,7 @@ if(location.hash){
 //hash值改变就调用路由函数展示页面
 window.onhashchange = function(){
 	var hash = location.hash.slice(1);
+	// console.log(hash);
 	routeController(hash);
 }
 
