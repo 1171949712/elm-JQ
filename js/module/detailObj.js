@@ -36,6 +36,7 @@ detailObj = $.extend(detailObj,{
 			obj = Store('shopcar_info');
 		}*/
 		var me = this;
+		
 		$('.cont-right').on('click', '.plus', function(event){
 			var now_num = +$(this).siblings('.num').html();	
 			// console.log($(this)[0])
@@ -46,7 +47,12 @@ detailObj = $.extend(detailObj,{
 			var food_name = $(this).parents('.food-info').find('.foodname').html();
 			var price = +((+$(this).parents().siblings('.pri').html() * now_num).toFixed(1));
 			obj[food_name] = [now_num,price];
-
+			var name_h2 = $(this).parents('.singleItem').find('h2[data-title]').attr('data-title');
+			// console.log(name_h2)
+			var selector = '[data-left-title="'+ name_h2 +'"]';
+			var left_num = +$(selector).find('.left-num').html();
+			left_num ++;
+			$(selector).find('.left-num').show().html(left_num);
 			// console.log(obj);
 			Store('shopcar_info', obj);
 			me.renderShopcar();
@@ -54,12 +60,19 @@ detailObj = $.extend(detailObj,{
 		// 减少商品数量
 		$('.cont-right').on('click', '.minus', function(event){
 			var now_num = +$(this).siblings('.num').html();
+			var name_h2 = $(this).parents('.singleItem').find('h2[data-title]').attr('data-title');
+			// console.log(name_h2)
+			var selector = '[data-left-title="'+ name_h2 +'"]';
+			var left_num = +$(selector).find('.left-num').html();
 			now_num -= 1;
+			left_num --;
 			// console.log(now_num);
 			if(now_num <= 0){
 				$(this).siblings('.num').html('');
 				$(this).css('display','none');
+				$(selector).find('.left-num').hide().html(left_num);
 			}else{
+				$(selector).find('.left-num').show().html(left_num);
 				$(this).siblings('.num').html(now_num);
 			}	
 			var food_name = $(this).parents('.food-info').find('.foodname').html();
@@ -87,12 +100,12 @@ detailObj = $.extend(detailObj,{
 		var num = 0;
 		for(var key in localdata){
 			// console.log(localdata[key][1]);
-			var selector = '[data-foodname="' + key + '"]';
+			/*var selector = '[data-foodname="' + key + '"]';
 			var name_h2 = $(selector).eq(0).parents('.singleItem').find('h2[data-title]').attr('data-title');
 			var left_show = $('.leftnav').find('[data-left-title="'+ name_h2 +'"]').eq(0).find('.left-num');
 			left_show.show();
 
-			left_show.html()
+			left_show.html()*/
 			// console.log(name_h2);
 			sum_price += localdata[key][1];
 			num += localdata[key][0];

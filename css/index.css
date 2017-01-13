@@ -656,16 +656,16 @@ body .overlist:after {
 	right: 0.106667rem;
 	top: 0.106667rem;
 	display: block;
-	width: 0.512rem;
-	height: 0.512rem;
+	width: 0.256rem;
+	height: 0.256rem;
 	padding: 0.106667rem;
-	line-height: 0.512rem;
+	line-height: 0.256rem;
 	border: 1px solid #ff461d;
 	border-radius: 50%;
 	background: #ff461d;
 	color: #fff;
 	display: none;
-	font-size: 0.213333rem;
+	font-size: 0.170667rem;
 	text-align: center;
 }
 #detail li.cont-left-active {
