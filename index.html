@@ -7,6 +7,10 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/swiper.min.css">
 	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/moduleCss/searchObj.css">
+	<link rel="stylesheet" href="css/moduleCss/citylistObj.css">
+	<link rel="stylesheet" href="css/moduleCss/rlistObj.css">
+	<link rel="stylesheet" href="css/moduleCss/detailObj.css">
 	<script src="js/rem.js"></script>
 </head>
 <body>
@@ -145,8 +149,31 @@
 					
 				</div>
 			</div>
+			
+			<div class="cartList">
+				<div class="layer"></div>
+				<div class="cartList-info">
+					<div class="cartList-header">
+						<span class="header-left">购物车</span>
+						<span class="header-right"><span class="clear-img"><img src="img/clear.png" alt=""></span>清空</span>
+					</div>
+					<div class="cartList-foods">
+						<div class="singlefood">
+							<span class="foodname">麦辣鸡翅</span>
+							<div class="price">
+								<i>¥</i><i class="pri">22</i>
+								<div class="count">
+									<span class="minus">-</span>
+									<em class="num"></em>
+									<span class="plus">+</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="shopcar">
-				<div class="car"><span class="icon-car"><span class="left-num"></span></span></div>
+				<div class="car"><span class="icon-car"><span class="left-num" id="cartSum"></span></span></div>
 				<div class="money-info">
 					<p class="money">¥0</p>
 					<p class="send-info">配送费¥5</p>  
@@ -162,6 +189,13 @@
 	<script src="js/swipe.js"></script>
 	<script src="js/iscroll.js"></script>
 	<script src="js/pace.js"></script>
+	<script src="js/eventCenter.js"></script>
+	<!-- 购物车组件 -->
+	<script src="js/widget/cartList.js"></script>
+	<script src="js/widget/leftPane.js"></script>
+	<script src="js/widget/priceModule.js"></script>
+	<script src="js/widget/singleCart.js"></script>
+
 	<script src="js/module/searchObj.js"></script>
 	<script src="js/module/detailObj.js"></script>
 	<script src="js/module/citylistObj.js"></script>	

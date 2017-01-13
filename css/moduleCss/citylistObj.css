@@ -1,0 +1,112 @@
+/*城市列表页*/
+
+
+#citylist .header {
+	height:1.877333rem;
+	line-height: 1.877333rem;
+	background:#3199e8;
+	font-size: 0.426667rem;
+	color:#fff;
+	text-align: right;
+	padding:0 0.426667rem;
+}
+
+#citylist .header span {
+	float:left;
+	font-weight: 400;
+	font-size: 0.853333rem;
+}
+
+#citylist .header a {
+	color:#fff;
+	padding:0 0.213333rem;
+	font-size: 0.426667rem; 
+}
+
+#citylist .now-city {
+	height:3.754667rem;
+	box-sizing: border-box;
+	margin-top: 0.426667rem;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    
+}
+
+#citylist .now-city p {
+	height:1.706667rem;
+	line-height: 1.706667rem;
+	box-sizing: border-box;
+	border-bottom: 1px solid #eee;
+	font-size: 0.6rem;
+	padding:0 0.426667rem;
+	color:#666;
+	text-align: left;
+}
+
+#citylist .now-city p span {
+	float: right;
+	font-size: 0.256rem;
+	color:#999;
+}
+
+#citylist .now-city h1 {
+	text-align: left;
+	padding:0 0.426667rem;
+	font-size: 0.853333rem;
+	line-height:1.877333rem;
+	color: #08c;
+	font-weight: 700;
+}
+
+#citylist .now-city h1 span {
+	float: right;
+	font-size: 1.066667rem;
+	color:#eee;
+}
+
+#citylist h2 {
+	width:100%;
+	box-sizing: border-box;
+	padding-left:0.426667rem;
+	height:1.706667rem;
+	line-height: 1.706667rem;
+	text-align: left;
+	margin-top: 0.426667rem;
+	font-size: 0.6rem;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #eee;
+	color:#666;
+}
+
+#citylist ul {
+	display: flex;
+	display: -webkit-flex;
+	flex-wrap: wrap;
+}
+
+#citylist li {
+	box-sizing: border-box;
+    width: 25%;
+    height: 1.877333rem;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    text-align: center;
+    line-height: 1.877333rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.682667rem;
+}
+
+#citylist .hot-list a {
+	 color: #08c;
+}
+
+#citylist .item a {
+    color: #555;
+}
+
+#citylist .item span {
+	font-size: 0.256rem;
+    color: #999;
+}

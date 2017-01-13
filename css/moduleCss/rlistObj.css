@@ -1,0 +1,283 @@
+/*餐厅列表页*/
+
+
+#rlist{
+	background-color: #f4f4f4;
+	height: auto;
+}
+
+#rlist .header {
+	height:1.877333rem;
+	line-height: 1.877333rem;
+	background:#3199e8;
+	font-size: 0.746667rem;
+	padding:0 0.64rem;
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+}
+
+#rlist .header a {
+	color:#fff;
+}
+
+#rlist .header a img {
+	width:0.64rem;
+	height: 0.64rem;
+}
+
+#rlist .header .detail-addr {
+	width:8.96rem;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+/*轮播图*/
+.swipe{
+    overflow: hidden;
+    position:relative;
+}
+.swipe-wrap{
+    overflow:hidden;
+    position:relative;
+}
+.swipe-wrap > div {
+    float: left;
+    width: 100%;
+    height: 6.058667rem;
+    position:relative;
+}
+#position{
+   position: absolute;
+   bottom: 0rem;
+   left: 0;
+   .rem(margin-top, 20rem);
+   .rem(margin-bottom, 10rem);
+   margin: 0;
+   opacity: 0.4;
+   width: 100%;
+   filter: alpha(opacity=50);
+   text-align: center;
+}
+/*小数点布局 */
+#position li{
+      width: 0.32rem;
+      height: 0.32rem					;
+      margin: 0 8px;
+      display: inline-block;
+      -webkit-border-radius: 0.64rem;
+      border-radius: 50%;
+      background-color: #CAC2C2;
+}
+#position li.cur{
+    background-color: black;
+}
+
+
+.swipe-wrap {
+	padding-bottom: 1.493333em;
+	background: #fff;
+}
+
+.swipe-wrap a {
+	display: block;
+	float: left;
+	width:25%;
+	margin-top: 0.426667rem;
+}
+
+.swipe-wrap .container {
+	display: inline-block;
+	width:1.92rem;
+	height:1.92rem;
+}
+
+.swipe-wrap img {
+	width: 100%;
+	height: 100%;
+}
+
+.swipe-wrap span {
+	display: block;
+	margin-top: .133333rem;
+	height:0.512rem;
+	color: #666;
+	font-size: .32rem;
+}
+/*
+.swiper-pagination {
+    position: absolute;
+    bottom: 0;
+}
+
+.swiper-pagination .swipe-indicator {
+    float:left;
+    width:0.32rem;
+    height:0.32rem;
+    border-radius: 50%;
+    background: #fff;
+    opacity: .2;
+    margin: 0 0.064rem;
+}*/
+
+.index-title {
+    margin-top: 0.426667rem;
+    line-height: 1.450667rem;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    color: #999;
+    font-size: .346667rem;
+    padding-left: 0.64rem;
+    text-align: left
+}
+
+.index-title span {
+	display: inline-block;
+    margin-right: .106667rem;
+    width: 0.64rem;
+    height: 0.64rem;
+    margin-right:0.170667rem
+}
+
+.index-title span img{
+	width:100%;
+	height:100%
+}
+
+.shoplist {
+    background-color: #fff
+}
+
+.item-list {
+	display: flex;
+	display: -webkit-flex;
+	justify-content: space-between;
+	padding: 0.64rem 0.426667rem;
+	border-bottom: 1px solid #eee;
+}
+
+.left-wrap {
+	width: 2.56rem;
+	height: 2.56rem;
+	margin-right: 0.426667rem;
+}
+
+.left-wrap img {
+	width: 100%;
+	height: 100%;
+}
+
+#rlist .right-wrap {
+	width: 13.013333rem;
+	height: 2.56rem;
+}
+
+.line {
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.line h3 {
+	overflow: hidden;
+	max-width: 8.0rem;
+	color: #333;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-weight: 700;
+	font-size: 0.65rem;
+	line-height: 0.682667rem;
+}
+
+.brand{
+	height: .4rem;
+	padding: 0 .066667rem;
+	margin-right: 0.32rem;
+	background: #ffd930;
+	color: #52250a;
+	text-align: center;
+	font-weight: 700;
+	font-size: 0.170667rem;
+	line-height: .4rem;
+	border-radius: .053333rem;
+}
+
+.line i {
+	font-style: normal;
+	padding: 0.064rem;
+	border: 1px solid rgb(221, 221, 221);
+	color: rgb(153, 153, 153);
+	font-size: 0.106667rem;
+	border-radius: 0.106667rem;
+	box-sizing: border-box;
+}
+
+.line:nth-child(2) {
+	margin-top: 0.32rem;
+	line-height: 0.618667rem;
+}
+
+.line:nth-child(3) {
+	margin-top: 0.362667rem;
+	line-height: 0.512rem;
+	font-size: .293333rem;
+}
+
+.left {
+	font-size: .293333rem;
+	color: #666;
+}
+
+.rate {
+	margin: 0 .106667rem;
+	color: #ff6000;
+}
+
+.left em,.info-d-t em {
+	font-style: normal;
+	margin: 0 .08rem;
+	color: #ddd;
+}
+
+.info-send {
+	font-size: 0.170667rem;
+}
+
+.info-send .fniao {
+	padding: .053333rem;
+	border-radius: 0.106667rem;
+	color: #fff;
+	background-color: #2395ff;
+}
+
+.info-send .zsd {
+	margin-left: 0.213333rem;
+	padding: 0 .053333rem;
+	border: 1px solid #44a5ff;
+	border-radius: 0.106667rem;
+	box-sizing: border-box;
+	background-color: #fff;
+	color: #2395ff;
+}
+
+.distance {
+	color: #999;
+}
+
+.time {
+	color: #2395ff;
+}
+
+.shoplist:after {
+	content: '正在加载更多商家...';
+	height: 1.536rem;
+	line-height: 1.536rem;
+	color: #999;
+}
+
+body .overlist:after {
+	content: '无更多商家';
+}
