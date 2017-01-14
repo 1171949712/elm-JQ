@@ -221,10 +221,10 @@
 	right: 0.106667rem;
 	top: 0.106667rem;
 	display: block;
-	width: 0.256rem;
-	height: 0.256rem;
+	width: 0.426667rem;
+	height: 0.426667rem;
 	padding: 0.106667rem;
-	line-height: 0.256rem;
+	line-height: 0.426667rem;
 	border: 1px solid #ff461d;
 	border-radius: 50%;
 	background: #ff461d;
@@ -362,7 +362,6 @@
 }
 #detail .cartList-header {
 	width: 100%;
-	border-bottom: 1px solid #ddd;
 	background-color: #eceff1;
 	height: 1.813333rem;
 	line-height: 1.813333rem;
@@ -400,6 +399,8 @@
 	font-size: 0.746667rem;
 	color: #333;
 	border-bottom: 1px solid #eee;
+	box-sizing: border-box;
+	overflow: hidden;
 }
 #detail .singlefood .price {
 	float: right;

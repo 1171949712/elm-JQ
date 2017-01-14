@@ -7,6 +7,7 @@ detailObj = $.extend(detailObj,{
 	init:function(){
 		// console.log(1)
 		this.bindEvent();
+		cartListObj.init();//购物车列表初始化工作
 		this.dom.on('touchmove',function(event){
 			event.preventDefault();
 		},false);
@@ -40,7 +41,11 @@ detailObj = $.extend(detailObj,{
 			var curFoodid = $(this).closest('.food-item').data('foodid');
 			var curCartObj = me.cartMap[curFoodid];
 			curCartObj.plus();
-			me.cartSelectedMap[curFoodid] = curCartObj;
+			if(!me.cartSelectedMap[curFoodid]){
+				//如果当前商品没有被选中过，就执行添加到购物车的操作
+				cartListObj.addCart(curCartObj)
+			}
+			me.cartSelectedMap[curFoodid] = curCartObj;//将被选择的单个购物车放到其映射表下
 			me.cartSum();
 		})
 		// 减少商品数量
@@ -48,7 +53,19 @@ detailObj = $.extend(detailObj,{
 			var curFoodid = $(this).closest('.food-item').data('foodid');
 			var curCartObj = me.cartMap[curFoodid];
 			curCartObj.minus();
+			if(curCartObj.num === 0){
+				// 当被选中的商品数量减到0时，删除购物车列表中的该商品
+				cartListObj.delete(curCartObj);
+			}
 			me.cartSum();
+		})
+		//购物车列表显示与隐藏
+		$('.shopcar').on('click',function(){
+			// console.log(me.cartSelectedMap)
+			if($.isEmptyObject(me.cartSelectedMap)){
+				return;
+			}
+			cartListObj.toggle();
 		})
 	},
 

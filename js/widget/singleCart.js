@@ -54,6 +54,9 @@ singleCart.prototype.render = function(){
 	var d = img_path.slice(32);
 	img_path = a + '/' + b + '/' + c + d + '.' + d;
 	// console.log(img_path);
+	if(this.num === 0){
+		this.num = '';
+	}
 	return '<div data-foodid="'+ this.food_id +'" class="food-item">'+
 			'<div class="food-img">'+
 				'<img src="//fuss10.elemecdn.com/'+ img_path +'" alt="">'+
@@ -66,10 +69,26 @@ singleCart.prototype.render = function(){
 					'<i>¥</i><i class="pri">'+ this.price +'</i>'+
 					'<div class="count">'+
 						'<span class="minus">-</span>'+
-						'<em class="num"></em>'+
+						'<em class="num">'+ this.num +'</em>'+
 						'<span class="plus">+</span>'+
 					'</div>'+
 				'</div>'+
 			'</div>'+
 		'</div>'
+}
+singleCart.prototype.singleRender = function(){
+	//渲染购物车列表中的单个购物车的外貌
+	var str = 
+		'<div data-foodid="'+ this.food_id+'" class="singlefood">'+
+			'<span class="foodname">'+ this.name +'</span>'+
+			'<div class="price">'+
+				'<i>¥</i><i class="pri">'+ this.price + '</i>'+
+				'<div class="count">'+
+					'<span class="minus">-</span>'+
+					'<em class="num">'+ this.num +'</em>'+
+					'<span class="plus">+</span>'+
+				'</div>'+
+			'</div>'+
+		'</div>'
+	return str;
 }
