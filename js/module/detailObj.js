@@ -13,6 +13,18 @@ detailObj = $.extend(detailObj,{
 		},false);
 	},
 
+	showFoodStatus: function(){
+		if(this.cacheData){
+			this.cartSelectedMap = this.cacheData;
+			for(var key in this.cartSelectedMap){
+				var curObj = this.cartMap[this.cartSelectedMap[key].food_id];
+				cartListObj.addCart(curObj);
+				$(this.cartSelectedMap[key].selector).find('.minus').css('display','inline-block');
+			}
+			this.cartSum();
+		}
+	},
+
 	leave:function(){
 		this.dom.hide();
 		localStorage.removeItem('shopcar_info');
@@ -81,6 +93,8 @@ detailObj = $.extend(detailObj,{
 			$('.topay').removeClass('active-pay');
 			return;
 		}
+		console.log(this);
+		Store(this.id, this.cartSelectedMap);
 		$('#cartSum').show();
 		$('.icon-car').addClass('active-car');
 		$('.topay').addClass('active-pay');
@@ -127,13 +141,18 @@ detailObj = $.extend(detailObj,{
 				}else{
 					send_method = '商家配送';
 				}
+				if(res.activities.length == 0){
+					description = '';
+				}else {
+					description = res.activities[0].description;
+				}
 				str = 
 					'<div class="header-main">'+
 						'<img src="https://fuss10.elemecdn.com/'+ img_path +'" alt="">'+
 						'<div class="shop-info">'+
 							'<h1>'+ res.name +'</h1>'+
 							'<p>'+ send_method +'<span class="split">/</span>'+ res.order_lead_time +'分钟送达<span class="split">/</span><span class="send-fee">'+ res.piecewise_agent_fee.tips +'</span></p>'+
-							'<p>'+ res.activities[0].description +'</p>'+
+							'<p>'+ description +'</p>'+
 						'</div>'+
 					'</div>'+
 					'<div class="header-tip">'+
@@ -178,6 +197,7 @@ detailObj = $.extend(detailObj,{
 
 	//渲染右边板块
 	renderRightPane: function(res){
+		this.cacheData = Store(this.id);
 		var str = '<div class="right-wrap">';
 		for(var i=0; i<res.length; i++){
 			str += 
@@ -188,6 +208,7 @@ detailObj = $.extend(detailObj,{
 		}
 		str += '</div>'
 		$('.cont-right').html(str);
+		this.showFoodStatus();
 		//初始化滚动条
 		window.leftScroll = new IScroll('.cont-left', {
 			scrollbars: false, //不显示滚动条
@@ -236,6 +257,13 @@ detailObj = $.extend(detailObj,{
 		var str = '';
 		var cart = null;
 		for(var i=0; i<list.length; i++){
+			if(this.cacheData){
+				//如果缓存数据存在的话, 过去选中购物车列表的数据
+				var foodid = list[i].specfoods[0].food_id;
+				if(this.cacheData[foodid]) {
+					list[i].num = this.cacheData[foodid].num;
+				}
+			}
 			var cart = new singleCart(list[i]);
 			this.cartMap[cart.food_id] = cart;//单个购物车食物id与食物内容进行映射
 			str += cart.render();
