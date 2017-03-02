@@ -13,6 +13,13 @@ detailObj = $.extend(detailObj,{
 		},false);
 	},
 
+	enter: function(){
+		this.dom.show();
+		this.cartSelectedMap = {};
+		$('.cartList-foods').html('');
+		$('#cartSum').html(0);
+	},
+
 	showFoodStatus: function(){
 		if(this.cacheData){
 			this.cartSelectedMap = this.cacheData;
